@@ -1,0 +1,21 @@
+{
+  "name": "node-linda-door-open-iota",
+  "version": "0.0.1",
+  "description": "open iota411 door",
+  "main": "linda-door-open-iota.coffee",
+  "scripts": {
+    "start": "./node_modules/coffee-script/bin/coffee linda-door-open-iota.coffee"
+  },
+  "keywords": [
+    "linda",
+    "arduino"
+  ],
+  "author": "Naoaki Yamada <napo0703@gmail.com>",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "arduino-firmata": "~0.3.0",
+    "linda-socket.io": "~0.2.0",
+    "coffee-script": "~1.7.1",
+    "socket.io-client": "~0.9.16"
+  }
+}
