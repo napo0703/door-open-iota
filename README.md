@@ -1,6 +1,6 @@
 # node-linda-door-open-iota
 
-Open [DeltaS112](http://gyazz.com/masuilab/慶應SFC 増井研究会) door with [linda-socket.io](https://github.com/node-linda/linda-socket.io)
+Open [Iota411](http://gyazz.com/masuilab/慶應SFC 増井研究会) door with [linda-socket.io](https://github.com/node-linda/linda-socket.io)
 
 * https://github.com/node-linda/node-linda-door-open-delta
 
@@ -39,7 +39,7 @@ servo motor -> digital pin 9
 ## Run with your [linda-base](https://github.com/node-linda/node-linda-base)
 
     % export LINDA_BASE=http://node-linda-base.herokuapp.com
-    % export LINDA_SPACE=test
+    % export LINDA_SPACE=iota
     % export ARDUINO=/dev/cu.usbserial-device
     % npm start
 
