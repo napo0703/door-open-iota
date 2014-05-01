@@ -50,11 +50,11 @@ servo motor -> digital pin 9
 
 for launchd (Mac OSX)
 
-    % sudo foreman export launchd /Library/LaunchDaemons/ --app node-linda-door-open-delta -u `whoami`
-    % sudo launchctl load -w /Library/LaunchDaemons/node-linda-door-open-delta-main-1.plist
+    % sudo foreman export launchd /Library/LaunchDaemons/ --app node-linda-door-open-iota -u `whoami`
+    % sudo launchctl load -w /Library/LaunchDaemons/node-linda-door-open-iota-main-1.plist
 
 
 for upstart (Ubuntu)
 
-    % sudo foreman export upstart /etc/init/ --app node-linda-door-open-delta -d `pwd` -u `whoami`
-    % sudo service node-linda-door-open-delta start
+    % sudo foreman export upstart /etc/init/ --app node-linda-door-open-iota -d `pwd` -u `whoami`
+    % sudo service node-linda-door-open-iota start
