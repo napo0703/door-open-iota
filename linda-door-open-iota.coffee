@@ -10,6 +10,7 @@ ts = linda.tuplespace(process.env.LINDA_SPACE)
 linda.io.on 'connect', ->
   console.log "connect!! <#{process.env.LINDA_BASE}/#{ts.name}>"
   last_at = 0
+
   ## Door Open
   ts.watch {type: 'door', cmd: 'open'}, (err, tuple) ->
     return if err
