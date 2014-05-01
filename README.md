@@ -9,7 +9,7 @@ Open [Iota411](http://gyazz.com/masuilab/慶應SFC 増井研究会) door with [l
 3. then, write {type: "door", cmd: "open", response: "success"}
 
 
-# Dependencies
+## Dependencies
 
 * [Servo Motor](http://akizukidenshi.com/catalog/g/gM-01794/)
 * [Arduino Firmata](https://github.com/shokai/arduino_firmata)
