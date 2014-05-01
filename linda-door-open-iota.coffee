@@ -19,8 +19,10 @@ linda.io.on 'connect', ->
     console.log tuple
     arduino.servoWrite 9, 90
     setTimeout ->
-      setTimeout (-> arduino.servoWrite 9, 10), 500
-      arduino.servoWrite 9, 90
+      arduino.servoWrite 9, 10
+      setTimeout ->
+        arduino.servoWrite 9, 90
+      , 1500
       res = tuple.data
       res.response = 'success'
       ts.write res
@@ -35,8 +37,10 @@ linda.io.on 'connect', ->
     console.log tuple
     arduino.servoWrite 9, 90
     setTimeout ->
-      setTimeout (-> arduino.servoWrite 9, 10), 500
-      arduino.servoWrite 9, 90
+      arduino.servoWrite 9, 170
+      setTimeout ->
+        arduino.servoWrite 9, 90
+      , 1500
       res = tuple.data
       res.response = 'success'
       ts.write res
