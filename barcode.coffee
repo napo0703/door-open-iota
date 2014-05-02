@@ -40,9 +40,10 @@ linda.io.on 'connect',->
       return console.error response unless response.statusCode is 200
 
       numbers = body.split("\n")
+      console.log numbers
 
       for number in numbers
-        return writeOpenTuple() if number is input
+        return writeOpenTuple() if number.match input
 
       return console.log "NOT FOUND"
 
