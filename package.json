@@ -4,7 +4,7 @@
   "description": "open iota411 door",
   "main": "linda-door-open-iota.coffee",
   "scripts": {
-    "start": "./node_modules/coffee-script/bin/coffee linda-door-open-iota.coffee"
+    "start": "coffee linda-door-open-iota.coffee"
   },
   "keywords": [
     "linda",

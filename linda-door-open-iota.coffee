@@ -1,6 +1,8 @@
 process.env.LINDA_BASE  ||= 'http://node-linda-base.herokuapp.com'
 process.env.LINDA_SPACE ||= 'iota'
 
+console.log "node-linda-door"
+
 ## Linda
 LindaClient = require('linda-socket.io').Client
 socket = require('socket.io-client').connect(process.env.LINDA_BASE)
@@ -10,17 +12,20 @@ ts = linda.tuplespace(process.env.LINDA_SPACE)
 linda.io.on 'connect', ->
   console.log "connect!! <#{process.env.LINDA_BASE}/#{ts.name}>"
   last_at = 0
+
   ## Door Open
   ts.watch {type: 'door', cmd: 'open'}, (err, tuple) ->
-    return if err
+    return console.error err if err
     return if tuple.data.response?
     return if last_at + 5000 > Date.now()  # 5sec interval
     last_at = Date.now()
     console.log tuple
     arduino.servoWrite 9, 90
     setTimeout ->
-      setTimeout (-> arduino.servoWrite 9, 10), 500
-      arduino.servoWrite 9, 90
+      arduino.servoWrite 9, 10
+      setTimeout ->
+        arduino.servoWrite 9, 90
+      , 1500
       res = tuple.data
       res.response = 'success'
       ts.write res
@@ -35,8 +40,10 @@ linda.io.on 'connect', ->
     console.log tuple
     arduino.servoWrite 9, 90
     setTimeout ->
-      setTimeout (-> arduino.servoWrite 9, 10), 500
-      arduino.servoWrite 9, 90
+      arduino.servoWrite 9, 170
+      setTimeout ->
+        arduino.servoWrite 9, 90
+      , 1500
       res = tuple.data
       res.response = 'success'
       ts.write res
