@@ -1,6 +1,8 @@
 process.env.LINDA_BASE  ||= 'http://node-linda-base.herokuapp.com'
 process.env.LINDA_SPACE ||= 'iota'
 
+console.log "node-linda-door"
+
 ## Linda
 LindaClient = require('linda-socket.io').Client
 socket = require('socket.io-client').connect(process.env.LINDA_BASE)
@@ -13,7 +15,7 @@ linda.io.on 'connect', ->
 
   ## Door Open
   ts.watch {type: 'door', cmd: 'open'}, (err, tuple) ->
-    return if err
+    return console.error err if err
     return if tuple.data.response?
     return if last_at + 5000 > Date.now()  # 5sec interval
     last_at = Date.now()
