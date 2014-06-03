@@ -15,7 +15,7 @@ argv = require('optimist')
   .argv
 
 # LINDA
-LindaClient = require('linda-socket.io').Client
+LindaClient = require('linda').Client
 socket      = require('socket.io-client').connect(process.env.LINDA_BASE)
 request     = require 'request'
 

@@ -4,7 +4,7 @@ process.env.LINDA_SPACE ||= 'iota'
 console.log "node-linda-door"
 
 ## Linda
-LindaClient = require('linda-socket.io').Client
+LindaClient = require('linda').Client
 socket = require('socket.io-client').connect(process.env.LINDA_BASE)
 linda = new LindaClient().connect(socket)
 ts = linda.tuplespace(process.env.LINDA_SPACE)

@@ -1,6 +1,6 @@
 # node-linda-door-open-iota
 
-Open [Iota411](http://gyazz.com/masuilab/慶應SFC 増井研究会) door with [linda-socket.io](https://github.com/node-linda/linda-socket.io)
+Open [Iota411](http://gyazz.com/masuilab/慶應SFC 増井研究会) door with [linda](https://github.com/node-linda/linda)
 
 * https://github.com/node-linda/node-linda-door-open-iota
 
